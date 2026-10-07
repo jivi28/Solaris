@@ -1,7 +1,12 @@
-# Solar-Farm Land-Suitability Classifier (Bavaria)
+# Solaris — Solar-Farm Land Suitability for Bavaria
 
-ML classification branch of the Energy/AI hackathon project
-(*Direction 8 — Satellite Intelligence for Energy*).
+Built at the **CDTM Energy Hack (June 2026)** by a team of three
+(*Direction 8 — Satellite Intelligence for Energy*). This repository holds the
+**ML and data pipeline** (Python, documented below) and the Next.js map UI that
+renders its output.
+
+**Result:** ROC-AUC 0.975 on a 25 km spatial hold-out; 3,061 scored 5 km grid
+cells across Bavaria. `python -m src.train` prints the metrics.
 
 It learns **where good solar-farm land is in Bavaria** from Google DeepMind's
 **AlphaEarth Foundations** satellite embeddings (64-dim vector per 10 m patch, in
@@ -26,7 +31,7 @@ There's no ground-truth "this cell is suitable" dataset, so:
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env          # set GEE_PROJECT=your-gcp-project-id
-earthengine authenticate      # one-time; you already have GEE access
+earthengine authenticate      # one-time Google Earth Engine login
 python -m src.gee_auth        # connectivity check
 ```
 
