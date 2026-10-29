@@ -1,5 +1,7 @@
 # Solaris — Solar-Farm Land Suitability for Bavaria
 
+[Live Demo](https://solario-eta.vercel.app)
+
 Built at the **CDTM Energy Hack (June 2026)** by a team of three
 (*Direction 8 — Satellite Intelligence for Energy*). This repository holds the
 **ML and data pipeline** (Python, documented below) and the Next.js map UI that
